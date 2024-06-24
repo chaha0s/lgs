@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Legendary Growth Solutions - Your partner in 0 to 1. We specialize in Tech, Product, Marketing, and Fund raising for exponential growth.">
+    <meta name="keywords" content="Legendary Growth Solutions, Tech, Product, Marketing, Fund raising, Exponential growth">
+    <meta property="og:title" content="Legendary Growth Solutions - Your Partner in 0 to 1">
+    <meta property="og:description" content="Achieve exponential growth with our expertise in Tech, Product, Marketing, and Fund raising.">
+    <meta property="og:image" content="/api/placeholder/1200/630">
+    <meta property="og:url" content="https://legendarygrowthsolutions.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Legendary Growth Solutions - Your Partner in 0 to 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        color: #f5f5f7;
+        overflow-x: hidden;
+        background-color: #000;
+        cursor: none;
+        Hide default cursor
+    }
+
+    .cursor {
+        z-index: 999;
+        position: fixed;
+        background: #2696E8;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        pointer-events: none;
+        box-shadow: 0 0 20px #2696E8,
+            0 0 60px #2696E8,
+            0 0 100px #2696E8;
+        animation: colors 5s infinite;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+    .cursor:before {
+        content: '';
+        position: absolute;
+        background: #2696E8;
+        width: 50px;
+        height: 50px;
+        opacity: 0.2;
+        transform: translate(-30%, -30%);
+        border-radius: 50%;
+    }
+
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .bg-gradient {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+        z-index: -2;
+    }
+
+    .fibonacci-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200vw;
+        height: 200vw;
+        z-index: -1;
+    }
+
+    .fibonacci-spiral {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 0 100% 0 0;
+    }
+
+    .title-container {
+        margin-bottom: 30px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+        font-weight: 600;
+        background: linear-gradient(90deg, #3a6186, #89253e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-bottom: 30px;
+        color: #f5f5f7;
+    }
+
+    .rotating-text {
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: #f5f5f7;
+        height: 60px;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+
+    .rotating-text span {
+        display: block;
+        height: 100%;
+        animation: spin 8s infinite;
+    }
+
+    .contact-email {
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: #f5f5f7;
+        margin-bottom: 30px;
+    }
+
+    .contact-email a {
+        color: #2997ff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .contact-email a:hover {
+        color: #0071e3;
+    }
+
+    .contact-button {
+        background-color: #0071e3;
+        color: #fff;
+        border: none;
+        padding: 12px 24px;
+        font-size: 1.1rem;
+        font-weight: 400;
+        border-radius: 980px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .contact-button:hover {
+        background-color: #0077ed;
+    }
+
+    @keyframes spin {
+
+        0%,
+        25% {
+            transform: translateY(0);
+        }
+
+        25%,
+        50% {
+            transform: translateY(-100%);
+        }
+
+        50%,
+        75% {
+            transform: translateY(-200%);
+        }
+
+        75%,
+        100% {
+            transform: translateY(-300%);
+        }
+    }
+
+    .custom-cursor {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #2997ff;
+        pointer-events: none;
+        z-index: 1000;
+        transition: transform 0.2s ease;
+    }
+
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .rotating-text {
+            font-size: 1.8rem;
+        }
+
+        .contact-email {
+            font-size: 1rem;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="bg-gradient"></div>
+    <div class="fibonacci-container"></div>
+    <section class="hero">
+        <div class="title-container">
+            <h1>Legendary Growth Solutions</h1>
+        </div>
+        <p>Your partner in 0 to 1</p>
+        <div class="rotating-text">
+            <span>Tech</span>
+            <span>Product</span>
+            <span>Marketing</span>
+            <span>Fund raising</span>
+        </div>
+        <p>Exponential growth awaits</p>
+        <p class="contact-email">Contact us: <a href="mailto:team@healthysure.in">team@healthysure.in</a></p>
+        <button class="contact-button" onclick="window.location.href='mailto:team@legendarygrowthsolutions.com'">Contact Us</button>
+    </section>
+    </div>
+    <script>
+    // GSAP animations
+    const tl = gsap.timeline();
+
+    tl.from(".title-container", { opacity: 0, y: 50, duration: 1, ease: "power3.out" })
+        .from(".hero p", { opacity: 0, y: 30, duration: 0.8, stagger: 0.2, ease: "power3.out" }, "-=0.5")
+        .from(".rotating-text", { opacity: 0, y: 30, duration: 0.8, ease: "power3.out" }, "-=0.5")
+        .from(".contact-email", { opacity: 0, y: 30, duration: 0.8, ease: "power3.out" }, "-=0.5")
+        .from(".contact-button", { opacity: 0, y: 30, duration: 0.8, ease: "power3.out" }, "-=0.5");
+
+    // Animated background gradient
+    gsap.to(".bg-gradient", {
+        background: "linear-gradient(135deg, #2a2a2a, #1e1e1e)",
+        duration: 10,
+        repeat: -1,
+        yoyo: true,
+        ease: "none"
+    });
+
+    // Fibonacci spiral animation
+    function createFibonacciSpiral() {
+        const container = document.querySelector('.fibonacci-container');
+        const fibSequence = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144];
+        let posX = 0;
+        let posY = 0;
+
+        fibSequence.forEach((size, index) => {
+            const spiral = document.createElement('div');
+            spiral.classList.add('fibonacci-spiral');
+            spiral.style.width = `${size * 20}px`;
+            spiral.style.height = `${size * 20}px`;
+            spiral.style.left = `${posX}px`;
+            spiral.style.top = `${posY}px`;
+
+            container.appendChild(spiral);
+
+            if (index % 4 === 0) posX += size * 20;
+            else if (index % 4 === 1) posY += size * 20;
+            else if (index % 4 === 2) posX -= size * 20;
+            else posY -= size * 20;
+
+            gsap.to(spiral, {
+                rotation: 360,
+                duration: 100,
+                repeat: -1,
+                ease: "none"
+            });
+        });
+    }
+
+    createFibonacciSpiral();
+    const cursor = document.querySelector(".cursor");
+    var timeout;
+
+    //follow cursor on mousemove
+    document.addEventListener("mousemove", (e) => {
+        let x = e.pageX;
+        let y = e.pageY;
+
+        cursor.style.top = y + "px";
+        cursor.style.left = x + "px";
+        cursor.style.display = "block";
+
+        //cursor effects when mouse stopped
+        function mouseStopped() {
+            cursor.style.display = "none";
+        }
+        clearTimeout(timeout);
+        timeout = setTimeout(mouseStopped, 5000);
+    });
+
+    //cursor effects when mouseout
+    document.addEventListener("mouseout", () => {
+        cursor.style.display = "none";
+    });
+    </script>
+</body>
+
+</html>
